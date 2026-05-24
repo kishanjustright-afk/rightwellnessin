@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rightWELLNESS India — Healthy Aging, Made Clearer</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/wellnessLogo.svg">
+<link rel="shortcut icon" type="image/png" href="assets/wellnessIcon.svg">
+<link rel="apple-touch-icon" href="assets/wellnessIcon.svg">
+<meta name="description" content="A premium wellness education platform for energy, recovery, metabolic balance, and active living. Serving India's health-conscious professionals and families.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #009f9e;
+    --teal-light: #33b2b1;
+    --teal-pale: #e5f5f5;
+    --teal-mid: #66c5c4;
+    --mint: #48bb78;
+    --mint-light: #68d391;
+    --mint-pale: #f0fff4;
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --text-dark: #214b4b;
+    --text-mid: #45686d;
+    --text-muted: #7E7499;
+    --border: #E4DFF5;
+    --border-soft: #F0EDF9;
+    --success: #1A6B4A;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 24px rgba(0,159,158,0.08);
+    --shadow-hover: 0 8px 40px rgba(0,159,158,0.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,250,247,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0 5vw;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--teal);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-logo-text span { color: var(--mint); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: white !important;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--teal-light) !important; }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--teal);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 5vw 28px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-soft);
+    display: block;
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 5vw;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(250, 250, 247, 0.95) 0%, rgba(250, 250, 247, 0.8) 45%, rgba(250, 250, 247, 0.3) 100%), url('assets/heroImage.png') center/cover no-repeat;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(51,178,177,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(72,187,120,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .hero-badge::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--mint);
+  }
+
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 40px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--teal);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--teal-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary:hover { background: var(--teal-pale); }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-graphic {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    border: 1px solid var(--border-soft);
+    position: relative;
+  }
+
+  .hero-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-stat {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .hero-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-pill {
+    background: var(--teal-pale);
+    color: var(--teal-light);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+  }
+
+  .hero-pill.mint {
+    background: var(--mint-pale);
+    color: var(--mint);
+    border-color: #9ae6b4;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--teal);
+    padding: 20px 5vw;
+  }
+
+  .trust-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .trust-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--mint-light);
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 5vw; }
+
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mint);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: var(--teal); }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-mid);
+    font-weight: 300;
+    max-width: 580px;
+    margin-bottom: 56px;
+    line-height: 1.7;
+  }
+
+  /* ── INDIA MARKET ── */
+  .india-section {
+    background: white;
+  }
+
+  .india-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .india-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .india-stat-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--border-soft);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .india-stat-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .india-stat-card .num {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .india-stat-card .label {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .india-content p {
+    color: var(--text-mid);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.75;
+  }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-mid);
+  }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--mint-pale);
+    border-radius: 50%;
+    border: 1px solid #9ae6b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── PROBLEMS SECTION ── */
+  .problems-section { background: var(--cream); }
+
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .problem-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    border: 1px solid var(--border-soft);
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .problem-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+  .problem-card:hover::before { opacity: 1; }
+
+  .problem-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--teal-pale);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .problem-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .problem-note {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--teal-pale);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--teal-light);
+    font-style: italic;
+  }
+
+  /* ── PILLARS ── */
+  .pillars-section { background: var(--teal); }
+
+  .pillars-section .section-label { color: var(--mint-light); }
+  .pillars-section .section-title { color: white; }
+  .pillars-section .section-sub { color: rgba(255,255,255,0.7); max-width: 600px; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .pillar-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+  }
+
+  .pillar-number {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .pillar-card h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .pillar-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .pillar-tag {
+    display: inline-block;
+    margin-top: 16px;
+    background: rgba(72,187,120,0.25);
+    color: var(--mint-light);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(72,187,120,0.35);
+  }
+
+  /* ── EDUCATION CARDS ── */
+  .education-section { background: white; }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .edu-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    background: white;
+  }
+
+  .edu-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+
+  .edu-card-top {
+    background: var(--teal-pale);
+    padding: 28px;
+    position: relative;
+  }
+
+  .edu-card-top.mint-top { background: var(--mint-pale); }
+
+  .edu-tag {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .edu-tag.mint { background: var(--mint); }
+
+  .edu-card-top h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.25;
+  }
+
+  .edu-card-body {
+    padding: 24px 28px;
+  }
+
+  .edu-card-body p {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .edu-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .edu-points li {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .edu-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--mint);
+  }
+
+  /* ── PARTNER SECTION ── */
+  .partner-section {
+    background: linear-gradient(135deg, #FDF8EC 0%, #E5F5F5 100%);
+  }
+
+  .partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .partner-types {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .partner-type-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    border: 1px solid var(--border-soft);
+    transition: box-shadow 0.2s;
+  }
+
+  .partner-type-card:hover { box-shadow: var(--shadow); }
+
+  .partner-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--teal-pale);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .partner-type-card h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .partner-type-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .partner-offer {
+    background: var(--teal);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    color: white;
+  }
+
+  .partner-offer h3 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .partner-offer p {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .partner-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .partner-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+
+  .partner-benefits li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: rgba(72,187,120,0.3);
+    border: 1px solid rgba(72,187,120,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23D4A836' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btn-gold {
+    background: var(--mint);
+    color: white;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-gold:hover { background: #9A7009; transform: translateY(-1px); }
+
+  /* ── WAITLIST FORM ── */
+  .waitlist-section { background: white; }
+
+  .waitlist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .waitlist-info h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .waitlist-info h2 em { font-style: italic; color: var(--teal); }
+
+  .waitlist-info p {
+    color: var(--text-mid);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .waitlist-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .waitlist-feature-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--mint);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .waitlist-feature p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--text-mid);
+  }
+
+  .form-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+
+  .form-group label span {
+    color: var(--mint);
+    margin-left: 2px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text-dark);
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--teal-mid);
+  }
+
+  .form-group textarea { min-height: 90px; resize: vertical; }
+
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234A4060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+
+  .form-submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px;
+  }
+
+  .form-success .success-icon {
+    width: 64px;
+    height: 64px;
+    background: #E6F4ED;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+  }
+
+  .form-success h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+
+  .form-success p {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--cream); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 22px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: color 0.2s;
+    user-select: none;
+  }
+
+  .faq-question:hover { color: var(--teal); }
+
+  .faq-arrow {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition: background 0.2s, border-color 0.2s, transform 0.3s;
+  }
+
+  .faq-arrow svg { transition: transform 0.3s; }
+
+  .faq-item.open .faq-arrow {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+
+  .faq-item.open .faq-arrow svg { transform: rotate(180deg); stroke: white; }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 24px 22px;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.75;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 16px;
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--teal-pale) 0%, #E5F5F5 100%);
+    padding: 80px 5vw 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-hero .breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .page-hero .breadcrumb a {
+    text-decoration: none;
+    color: var(--teal-light);
+    cursor: pointer;
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .page-hero h1 em { font-style: italic; color: var(--teal); }
+
+  .page-hero p {
+    font-size: 18px;
+    color: var(--text-mid);
+    font-weight: 300;
+    max-width: 640px;
+    line-height: 1.65;
+  }
+
+  /* ── PAGE CONTENT ── */
+  .page-content {
+    padding: 60px 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-two-col {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+
+  .content-prose h2 {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .content-prose h2 em { font-style: italic; color: var(--teal); }
+
+  .content-prose p {
+    color: var(--text-mid);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .content-prose ul {
+    list-style: none;
+    margin: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .content-prose ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  .content-prose ul li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-card {
+    background: var(--teal-pale);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid var(--border);
+    position: sticky;
+    top: 88px;
+  }
+
+  .sidebar-card h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+
+  .sidebar-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.65;
+  }
+
+  .sidebar-disclaimer {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+    border: 1px solid var(--border-soft);
+    margin-top: 20px;
+  }
+
+  /* ── CONTENT CARDS ── */
+  .content-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .content-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--border-soft);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .content-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+  .content-card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .content-card h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+
+  .content-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ── DISCLAIMER BANNER ── */
+  .disclaimer-bar {
+    background: #F8F6FD;
+    border-top: 1px solid var(--border);
+    padding: 20px 5vw;
+  }
+
+  .disclaimer-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 5vw 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .footer-brand h3 span { color: var(--mint-light); }
+
+  .footer-brand p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .footer-domain {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--mint-light);
+    border: 1px solid rgba(72,187,120,0.4);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+  .footer-col ul li a:hover { color: var(--mint-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  .footer-bottom a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover { color: var(--mint-light); }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: block; }
+
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { display: none; }
+    .hero { min-height: auto; padding: 60px 5vw; }
+
+    .india-grid, .partner-grid, .waitlist-grid, .content-two-col { grid-template-columns: 1fr; gap: 32px; }
+    .india-stats { grid-template-columns: 1fr 1fr; }
+
+    .problems-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .content-card-grid { grid-template-columns: 1fr 1fr; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .trust-bar-inner { gap: 24px; }
+
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+
+    .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+    .sidebar-card { position: static; }
+  }
+
+  @media (max-width: 560px) {
+    section { padding: 56px 5vw; }
+    .india-stats { grid-template-columns: 1fr; }
+    .content-card-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+    .form-submit-row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')" href="#" style="cursor:pointer;">
+    <img src="assets/wellnessLogo.svg" alt="Wellness Logo" width="200">
+  </a>
+
+  <ul class="nav-links">
+    <li><a onclick="showPage('aging')" href="#">Healthy Aging</a></li>
+    <li><a onclick="showPage('metabolic')" href="#">Metabolic Wellness</a></li>
+    <li><a onclick="showPage('recovery')" href="#">Recovery & Energy</a></li>
+    <li><a onclick="showPage('beauty')" href="#">Beauty From Within</a></li>
+    <li><a onclick="showPage('education')" href="#">Education Hub</a></li>
+    <li><a onclick="showPage('clinics')" href="#">For Clinics</a></li>
+    <li><a onclick="showPage('faq')" href="#">FAQs</a></li>
+    <li><a onclick="showPage('contact')" href="#" class="nav-cta">Join Waitlist</a></li>
+  </ul>
+
+  <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMobileMenu();" href="#">Home</a>
+  <a onclick="showPage('aging');toggleMobileMenu();" href="#">Healthy Aging</a>
+  <a onclick="showPage('metabolic');toggleMobileMenu();" href="#">Metabolic Wellness</a>
+  <a onclick="showPage('recovery');toggleMobileMenu();" href="#">Recovery & Energy</a>
+  <a onclick="showPage('beauty');toggleMobileMenu();" href="#">Beauty From Within</a>
+  <a onclick="showPage('education');toggleMobileMenu();" href="#">Education Hub</a>
+  <a onclick="showPage('clinics');toggleMobileMenu();" href="#">For Clinics & Partners</a>
+  <a onclick="showPage('faq');toggleMobileMenu();" href="#">FAQs</a>
+  <a onclick="showPage('contact');toggleMobileMenu();" href="#" style="color: var(--teal); font-weight: 500;">Join Waitlist →</a>
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <!-- <div class="hero-badge-dot"></div> -->
+          India's Active-Aging Wellness Platform
+        </div>
+        <h1>Healthy Aging,<br><em>Made Clearer</em></h1>
+        <p class="hero-sub">A premium wellness education platform for energy, recovery, metabolic balance, and active living — designed for India's health-conscious generation.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" onclick="showPage('contact')">
+            Join the Waitlist
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" class="btn-secondary" onclick="showPage('education')">
+            Explore Wellness Topics
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-graphic">
+          <div class="hero-stat-grid">
+            <div class="hero-stat">
+              <div class="hero-stat-num">6</div>
+              <div class="hero-stat-label">Wellness pillars designed for modern Indian life</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">40+</div>
+              <div class="hero-stat-label">Education topics across aging, energy & recovery</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">100%</div>
+              <div class="hero-stat-label">Education-led — not treatment-based guidance</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">India</div>
+              <div class="hero-stat-label">Built specifically for Indian consumers & clinics</div>
+            </div>
+          </div>
+          <div class="hero-pillars">
+            <span class="hero-pill">Energy</span>
+            <span class="hero-pill">Mobility</span>
+            <span class="hero-pill gold">Recovery</span>
+            <span class="hero-pill">Sleep</span>
+            <span class="hero-pill gold">Skin Health</span>
+            <span class="hero-pill">Metabolic Balance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Education-Led Approach
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Professional Guidance Recommended
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        For Indian Professionals & Families
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Not a Substitute for Medical Care
+      </div>
+    </div>
+  </div>
+
+  <!-- INDIA MARKET SECTION -->
+  <section class="india-section">
+    <div class="section-inner">
+      <div class="india-grid">
+        <div class="india-content">
+          <span class="section-label">India Wellness Context</span>
+          <h2 class="section-title">India is waking up to<br><em>proactive wellness</em></h2>
+          <p>Today's Indian professional is more health-aware than ever. From managing energy levels through busy workdays, to maintaining vitality into their 40s, 50s, and beyond — the questions being asked are changing.</p>
+          <p>Yet guidance remains fragmented. Medical consultations are often too short. Online information is overwhelming or misleading. Trusted, clear, science-informed wellness education is hard to find.</p>
+          <p>rightWELLNESS India is built to change that — providing a clear, trustworthy space where Indian consumers and families can learn about wellness, understand their options, and make more informed lifestyle choices.</p>
+          <ul class="check-list">
+            <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div> Designed for India's 40–65 age group and health-conscious families</li>
+            <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div> Clear language, without heavy medical jargon</li>
+            <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div> Guidance you can discuss with your doctor or nutritionist</li>
+            <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div> Premium but accessible — not intimidating</li>
+          </ul>
+        </div>
+        <div class="india-stats">
+          <div class="india-stat-card">
+            <div class="num">280M+</div>
+            <div class="label">Indians aged 45 and above are the fastest-growing wellness consumers</div>
+          </div>
+          <div class="india-stat-card">
+            <div class="num">₹4.5L Cr</div>
+            <div class="label">India's wellness market projected by 2030, growing rapidly</div>
+          </div>
+          <div class="india-stat-card">
+            <div class="num">72%</div>
+            <div class="label">Urban Indians report fatigue, poor sleep, or energy concerns regularly</div>
+          </div>
+          <div class="india-stat-card">
+            <div class="num">3x</div>
+            <div class="label">Rise in proactive health enquiries among Indian professionals 40–60</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS SECTION -->
+  <section class="problems-section">
+    <div class="section-inner">
+      <span class="section-label">Common Wellness Concerns</span>
+      <h2 class="section-title">Concerns we hear<br>every day in India</h2>
+      <p class="section-sub">These are real, everyday experiences — not diseases. rightWELLNESS is here to help you understand them better and explore wellness-oriented lifestyle support.</p>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">⚡</div>
+          <h3>Constant Fatigue</h3>
+          <p>Waking up tired despite a full night's sleep. Feeling drained by midday. Struggling to maintain energy through work, family, and social commitments.</p>
+          <div class="problem-note">rightWELLNESS explores energy, nutrition, and lifestyle factors — educational support, not a medical diagnosis.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🌙</div>
+          <h3>Poor Sleep & Stress</h3>
+          <p>Difficulty falling asleep, waking at odd hours, or feeling unrested. High work pressure and modern life stress affecting daily quality of life.</p>
+          <div class="problem-note">We explore sleep hygiene, recovery approaches, and stress-support strategies as wellness education.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🏃</div>
+          <h3>Low Activity & Stiffness</h3>
+          <p>Feeling less mobile than before. Stiff joints in the morning. Reduced stamina for walks, travel, or the activities you used to enjoy.</p>
+          <div class="problem-note">Mobility and movement are core wellness pillars — we share lifestyle and educational perspectives.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⚖️</div>
+          <h3>Weight & Metabolic Concerns</h3>
+          <p>Unexplained weight changes after 40, slow metabolism, abdominal weight gain, or difficulty maintaining what used to feel normal.</p>
+          <div class="problem-note">Metabolic wellness is a key education area — always alongside professional medical guidance.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">✨</div>
+          <h3>Skin & Aging Concerns</h3>
+          <p>Noticing changes in skin texture, elasticity, or radiance. Wondering what a healthy-aging beauty routine really looks like from the inside out.</p>
+          <div class="problem-note">Beauty from within is an educational topic — we do not offer cosmetic or dermatological treatments.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🧠</div>
+          <h3>Mental Clarity & Focus</h3>
+          <p>Brain fog, reduced concentration, or difficulty staying sharp through the day. Common concerns among Indian professionals in their 40s and 50s.</p>
+          <div class="problem-note">Cognitive wellness and lifestyle factors are part of our education content — professional consultation always encouraged.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS SECTION -->
+  <section class="pillars-section">
+    <div class="section-inner">
+      <span class="section-label">Our Wellness Framework</span>
+      <h2 class="section-title">Six pillars of<br>healthy aging</h2>
+      <p class="section-sub">rightWELLNESS organises its education and guidance around six interconnected pillars — the foundations of active, vital, long-term living.</p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h3>Energy</h3>
+          <p>Understanding cellular energy, mitochondrial health, nutritional support, and the lifestyle factors that influence how energised you feel day to day.</p>
+          <span class="pillar-tag">Vitality Support</span>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h3>Mobility</h3>
+          <p>Exploring joint health, muscle function, flexibility, and movement patterns that support an active life well into your 60s and beyond.</p>
+          <span class="pillar-tag">Active Living</span>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h3>Recovery</h3>
+          <p>Sleep quality, repair processes, inflammation management, and the role of rest and restoration in healthy aging — often the most overlooked pillar.</p>
+          <span class="pillar-tag">Rest & Repair</span>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">04</div>
+          <h3>Skin & Beauty</h3>
+          <p>The relationship between nutrition, collagen, antioxidants, hydration, and how the skin reflects overall internal health — beauty from within.</p>
+          <span class="pillar-tag">Healthy Glow</span>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">05</div>
+          <h3>Metabolic Balance</h3>
+          <p>How the body processes energy, regulates weight, and maintains metabolic efficiency — understanding the lifestyle levers that matter most.</p>
+          <span class="pillar-tag">Balance & Weight</span>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">06</div>
+          <h3>Sleep & Stress</h3>
+          <p>The science of restorative sleep, circadian rhythms, cortisol balance, and practical strategies for managing the modern stressors of Indian professional life.</p>
+          <span class="pillar-tag">Calm & Resilience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION CARDS -->
+  <section class="education-section">
+    <div class="section-inner">
+      <span class="section-label">Education Hub</span>
+      <h2 class="section-title">Wellness knowledge,<br><em>clearly explained</em></h2>
+      <p class="section-sub">Our education content is designed for curious, health-conscious Indians — no medical degree required. Clear, honest, and genuinely useful.</p>
+
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-card-top">
+            <span class="edu-tag">Foundation</span>
+            <h3>What is active aging?</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>Active aging is not about looking younger — it's about maintaining the energy, mobility, and mental sharpness to live fully at every decade. Learn what the science actually says.</p>
+            <ul class="edu-points">
+              <li>Why aging begins earlier than most people think</li>
+              <li>The difference between chronological and biological age</li>
+              <li>What lifestyle factors matter most in your 40s and 50s</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-top gold-top">
+            <span class="edu-tag gold">Key Topic</span>
+            <h3>Why metabolic wellness matters after 40</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>Metabolism doesn't simply "slow down" — it changes in ways you can understand and influence. This piece explains the key metabolic shifts that happen after 40 for Indian adults.</p>
+            <ul class="edu-points">
+              <li>How muscle mass affects metabolic rate</li>
+              <li>Insulin sensitivity and why it changes</li>
+              <li>Practical lifestyle approaches supported by evidence</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-top">
+            <span class="edu-tag">Informed Choices</span>
+            <h3>Supplements vs lifestyle: what you should understand</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>The Indian wellness market is flooded with products. Before you spend anything, here is a clear and honest guide to how supplements relate — and don't replace — lifestyle habits.</p>
+            <ul class="edu-points">
+              <li>What supplements can and cannot do</li>
+              <li>How to evaluate wellness product claims critically</li>
+              <li>Why professional consultation should always come first</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-top gold-top">
+            <span class="edu-tag gold">Consumer Guide</span>
+            <h3>Questions to ask before starting any wellness product</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>Not all wellness products are equal — and the marketing can be confusing. Use these questions to guide informed conversations with your doctor or nutritionist.</p>
+            <ul class="edu-points">
+              <li>What evidence supports this product?</li>
+              <li>Is it appropriate for my age and health status?</li>
+              <li>Are there interactions with existing medications?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-top">
+            <span class="edu-tag">Guidance</span>
+            <h3>Why professional guidance matters in wellness</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>Self-directed wellness is valuable — but it works best alongside professional input. Here is why working with a nutritionist, health coach, or doctor makes a meaningful difference.</p>
+            <ul class="edu-points">
+              <li>Personalised recommendations vs generic advice</li>
+              <li>Monitoring for interactions and contraindications</li>
+              <li>Building a sustainable, long-term wellness approach</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-top gold-top">
+            <span class="edu-tag gold">Sleep Science</span>
+            <h3>The Indian sleep crisis — and what you can do</h3>
+          </div>
+          <div class="edu-card-body">
+            <p>India ranks among countries with the poorest sleep quality globally. This piece explores the lifestyle, dietary, and environmental factors — and practical, evidence-informed steps to take.</p>
+            <ul class="edu-points">
+              <li>How sleep deprivation accelerates aging</li>
+              <li>The cortisol-sleep connection</li>
+              <li>Simple, sustainable sleep hygiene for Indian households</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:16px;">
+        <a href="#" class="btn-primary" onclick="showPage('education')">
+          Visit Full Education Hub
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER SECTION -->
+  <section class="partner-section">
+    <div class="section-inner">
+      <div class="partner-grid">
+        <div>
+          <span class="section-label">For Clinics & Partners</span>
+          <h2 class="section-title">Join India's trusted<br><em>wellness network</em></h2>
+          <p class="section-sub" style="margin-bottom: 8px;">We are building India's most trusted wellness education ecosystem — partnering with professionals who share our belief in clarity, evidence, and patient-first practice.</p>
+
+          <div class="partner-types">
+            <div class="partner-type-card">
+              <div class="partner-icon">🏥</div>
+              <div>
+                <h4>Wellness Clinics</h4>
+                <p>Integrate education-led wellness content and resources into your patient journey for better outcomes and engagement.</p>
+              </div>
+            </div>
+            <div class="partner-type-card">
+              <div class="partner-icon">🥗</div>
+              <div>
+                <h4>Nutritionists & Dietitians</h4>
+                <p>Enhance your practice with curated education content your clients can access between sessions.</p>
+              </div>
+            </div>
+            <div class="partner-type-card">
+              <div class="partner-icon">💊</div>
+              <div>
+                <h4>Premium Pharmacies</h4>
+                <p>Provide your customers with trustworthy, compliance-safe wellness education to support informed conversations.</p>
+              </div>
+            </div>
+            <div class="partner-type-card">
+              <div class="partner-icon">🏋️</div>
+              <div>
+                <h4>Health Coaches</h4>
+                <p>Add a credible education layer to your wellness coaching practice — backed by research and professional insight.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-offer">
+          <h3>Partner with rightWELLNESS India</h3>
+          <p>Build a more trusted wellness education ecosystem alongside India's most forward-thinking health professionals. We are currently onboarding founding partners ahead of our full launch.</p>
+          <ul class="partner-benefits">
+            <li>Access to our full education content library</li>
+            <li>Co-branded wellness education materials</li>
+            <li>Professional partner listing on rightwellness.in</li>
+            <li>Early access to new research and resources</li>
+            <li>Priority consultation scheduling for your clients</li>
+          </ul>
+          <a href="#" class="btn-gold" onclick="showPage('contact')">
+            Express Partnership Interest
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST SECTION (HOMEPAGE VERSION) -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="section-inner">
+      <div class="waitlist-grid">
+        <div class="waitlist-info">
+          <span class="section-label">Join the Community</span>
+          <h2 class="waitlist-info" style="font-family:var(--font-display);font-size:clamp(28px,3vw,40px);font-weight:500;color:var(--text-dark);line-height:1.2;margin-bottom:20px;">Be among the first to<br><em style="font-style:italic;color:var(--teal);">experience rightWELLNESS</em></h2>
+          <p>We are building India's most trusted active-aging and wellness education platform. Join our waitlist to get early access, education content, and invitations to our wellness community.</p>
+
+          <div class="waitlist-feature">
+            <div class="waitlist-feature-dot"></div>
+            <p>Early access to education hub content before public launch</p>
+          </div>
+          <div class="waitlist-feature">
+            <div class="waitlist-feature-dot"></div>
+            <p>Invitations to exclusive wellness webinars with Indian health professionals</p>
+          </div>
+          <div class="waitlist-feature">
+            <div class="waitlist-feature-dot"></div>
+            <p>Monthly wellness insights curated specifically for Indian consumers</p>
+          </div>
+          <div class="waitlist-feature">
+            <div class="waitlist-feature-dot"></div>
+            <p>Personalised wellness topic recommendations based on your interests</p>
+          </div>
+          <div class="waitlist-feature">
+            <div class="waitlist-feature-dot"></div>
+            <p>First access to rightWELLNESS partner clinic network when launched</p>
+          </div>
+
+          <div style="margin-top:32px;padding:20px;background:var(--teal-pale);border-radius:var(--radius);border:1px solid var(--border);">
+            <p style="font-size:12px;color:var(--text-muted);line-height:1.65;font-style:italic;margin-bottom:0;">Information on this website is for wellness education only. It is not medical advice and does not diagnose, treat, cure, or prevent any disease or health condition. Always consult a qualified healthcare professional before making changes to your diet, exercise routine, or lifestyle.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div id="waitlistForm">
+            <h3 style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--text-dark);margin-bottom:6px;">Join the Waitlist</h3>
+            <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-bottom:28px;">Share a few details and we will be in touch soon.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name <span>*</span></label>
+                <input type="text" placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label>City <span>*</span></label>
+                <input type="text" placeholder="Mumbai, Delhi, Bangalore...">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label>Email Address <span>*</span></label>
+                <input type="email" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label>Age Group <span>*</span></label>
+                <select>
+                  <option value="">Select your age group</option>
+                  <option>Under 35</option>
+                  <option>35 – 44</option>
+                  <option>45 – 54</option>
+                  <option>55 – 64</option>
+                  <option>65 and above</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>I am a <span>*</span></label>
+                <select>
+                  <option value="">Select role</option>
+                  <option>Individual Consumer</option>
+                  <option>Family / Caregiver</option>
+                  <option>Clinic or Hospital</option>
+                  <option>Nutritionist / Dietitian</option>
+                  <option>Health Coach</option>
+                  <option>Pharmacy / Retailer</option>
+                  <option>Other Professional</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label>Primary Wellness Interest</label>
+                <select>
+                  <option value="">What interests you most?</option>
+                  <option>Energy & Vitality</option>
+                  <option>Sleep & Stress Support</option>
+                  <option>Metabolic Wellness & Weight</option>
+                  <option>Joint Health & Mobility</option>
+                  <option>Skin Health & Beauty from Within</option>
+                  <option>Overall Healthy Aging</option>
+                  <option>Partner / Clinic Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label>Message or Question (Optional)</label>
+                <textarea placeholder="Tell us a bit more about what you're looking for, or ask us a question..."></textarea>
+              </div>
+            </div>
+            <div class="form-submit-row">
+              <p class="form-note">Your information is safe with us. We will never share your details with third parties.</p>
+              <button class="btn-primary" onclick="submitForm()">
+                Submit →
+              </button>
+            </div>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3>You're on the list!</h3>
+            <p>Thank you for joining the rightWELLNESS India waitlist. We'll be in touch soon with your early access details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END HOME -->
+
+<!-- ==================== HEALTHY AGING PAGE ==================== -->
+<div id="page-aging" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Healthy Aging</div>
+      <h1>Healthy <em>Aging</em></h1>
+      <p>Understanding what happens to the body as we age — and the lifestyle, nutritional, and wellness factors that influence how we feel at every decade.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-two-col">
+      <div class="content-prose">
+        <h2>What does <em>healthy aging</em> really mean?</h2>
+        <p>Aging is not a disease. It is a natural biological process — but how we experience it varies enormously depending on lifestyle, nutrition, activity, sleep, and stress management. The emerging science of healthy aging is showing us that many of the changes we associate with getting older are not inevitable.</p>
+        <p>Active aging means staying engaged, mobile, mentally sharp, and energised — not despite your age, but because you are supporting your body's natural processes with the right habits and awareness.</p>
+        <p>For Indian adults, this is particularly relevant. With India's unique dietary patterns, lifestyle pressures, and health landscape, understanding what active aging looks like in an Indian context is something rightWELLNESS is built to address.</p>
+        <h2 style="margin-top:36px;">Key dimensions of <em>healthy aging</em></h2>
+        <p>Research consistently identifies several interconnected areas that determine how well we age:</p>
+        <ul>
+          <li>Maintaining muscle mass and physical strength (sarcopenia prevention)</li>
+          <li>Supporting cardiovascular and metabolic efficiency</li>
+          <li>Sustaining cognitive clarity and emotional resilience</li>
+          <li>Preserving bone density and joint health</li>
+          <li>Optimising sleep quality and recovery</li>
+          <li>Managing cellular inflammation through lifestyle choices</li>
+        </ul>
+        <p>None of these require extreme interventions. The evidence consistently points to the same fundamentals: consistent movement, nutritious food, restorative sleep, managed stress, and social connection.</p>
+        <div style="background:var(--mint-pale);border-left:3px solid var(--mint);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:24px 0;">
+          <p style="font-size:14px;color:var(--text-mid);font-style:italic;margin-bottom:0;">rightWELLNESS provides wellness education in this area. It is not a substitute for medical assessment or professional healthcare guidance. Please consult a qualified physician or specialist for personal health decisions.</p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Explore Aging Topics</h3>
+        <p>Our education hub covers the key aspects of aging — from cellular biology to practical daily habits.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:14px;color:var(--text-mid);">— Understanding biological age vs chronological age</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Muscle health and longevity</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Hormonal changes in the 40s and 50s</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Bone density and joint wellness</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Cognitive health and aging</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Anti-aging nutrition fundamentals</li>
+        </ul>
+        <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;" onclick="showPage('contact')">
+          Join Waitlist for Full Access
+        </a>
+        <div class="sidebar-disclaimer">Information on this page is for wellness education only. It is not medical advice and does not diagnose, treat, cure, or prevent any condition.</div>
+      </div>
+    </div>
+
+    <div class="content-card-grid">
+      <div class="content-card">
+        <span class="content-card-icon">🧬</span>
+        <h4>Cellular Aging</h4>
+        <p>Understanding telomeres, mitochondrial function, and the cellular processes that influence how we age from within.</p>
+      </div>
+      <div class="content-card">
+        <span class="content-card-icon">💪</span>
+        <h4>Muscle & Movement</h4>
+        <p>Why preserving muscle mass after 40 is one of the most important things you can do for long-term health and independence.</p>
+      </div>
+      <div class="content-card">
+        <span class="content-card-icon">🧘</span>
+        <h4>Mindful Aging</h4>
+        <p>The role of mental health, purpose, social connection, and stress resilience in how gracefully and energetically we age.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== METABOLIC WELLNESS PAGE ==================== -->
+<div id="page-metabolic" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Metabolic Wellness</div>
+      <h1>Metabolic <em>Wellness</em></h1>
+      <p>Understanding how your body manages energy, weight, and metabolic balance — and the lifestyle factors that make a meaningful difference after 40.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-two-col">
+      <div class="content-prose">
+        <h2>What is <em>metabolic wellness</em>?</h2>
+        <p>Metabolism refers to all the chemical processes your body uses to convert food into energy and carry out essential functions. Metabolic wellness is not simply about weight — it encompasses how efficiently your body processes nutrients, regulates blood sugar rhythm, maintains energy, and manages fat storage.</p>
+        <p>After the age of 40, metabolic changes become more noticeable for many Indian adults. This is influenced by shifting hormone levels, reduced muscle mass, lifestyle changes, and dietary patterns common in urban India.</p>
+        <p>The encouraging news is that metabolic health responds meaningfully to lifestyle choices — particularly movement, nutrition timing, sleep, and stress management. These are all areas where informed education makes a genuine difference.</p>
+        <h2 style="margin-top:36px;">Key metabolic wellness topics</h2>
+        <ul>
+          <li>Understanding insulin sensitivity and blood sugar balance</li>
+          <li>The role of muscle in metabolic rate (why strength matters)</li>
+          <li>How sleep deprivation affects metabolism</li>
+          <li>Dietary patterns and metabolic health in Indian diets</li>
+          <li>The connection between stress hormones and weight</li>
+          <li>Gut health and its metabolic implications</li>
+        </ul>
+        <div style="background:var(--teal-pale);border-left:3px solid var(--teal-mid);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:24px 0;">
+          <p style="font-size:14px;color:var(--text-mid);font-style:italic;margin-bottom:0;">Metabolic health concerns including blood sugar, weight, and related conditions require professional medical assessment. rightWELLNESS provides wellness education only — not medical advice, diagnosis, or treatment guidance.</p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Metabolic Education</h3>
+        <p>Explore our growing library of metabolic wellness topics — written in clear language for health-conscious Indian adults.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:14px;color:var(--text-mid);">— Understanding your metabolic rate</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Blood sugar balance basics</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Weight and metabolic change after 40</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Gut microbiome and metabolism</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Indian dietary patterns and metabolic health</li>
+        </ul>
+        <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;" onclick="showPage('contact')">Join Waitlist</a>
+        <div class="sidebar-disclaimer">This content is for wellness education only. Not a substitute for medical advice. Please consult a qualified healthcare professional.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== RECOVERY & ENERGY PAGE ==================== -->
+<div id="page-recovery" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Recovery & Energy</div>
+      <h1>Recovery & <em>Energy</em></h1>
+      <p>Exploring the science of cellular energy, deep recovery, sleep quality, and why rest is one of the most powerful wellness tools available.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-two-col">
+      <div class="content-prose">
+        <h2>Why <em>recovery</em> is the wellness pillar most people ignore</h2>
+        <p>In India's achievement-oriented culture, rest is often seen as laziness. But the science of recovery tells a different story. Sleep, active recovery, and restoration are not passive — they are when the body repairs, consolidates, and regenerates. Skimping on recovery is one of the fastest ways to accelerate aging.</p>
+        <p>Energy levels are directly linked to recovery quality. Mitochondria — the energy-producing structures in your cells — are most efficiently restored during deep sleep and periods of calm. Chronic stress and poor sleep deplete energy not just today, but over time.</p>
+        <h2 style="margin-top:36px;">What we explore in Recovery & Energy</h2>
+        <ul>
+          <li>The biology of fatigue and what it is actually telling you</li>
+          <li>Mitochondrial health and cellular energy production</li>
+          <li>Deep sleep stages and why they matter</li>
+          <li>Nutritional support for energy and recovery</li>
+          <li>Exercise recovery and why active rest is important</li>
+          <li>The cortisol cycle and adrenal wellness</li>
+        </ul>
+        <div style="background:var(--mint-pale);border-left:3px solid var(--mint);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:24px 0;">
+          <p style="font-size:14px;color:var(--text-mid);font-style:italic;margin-bottom:0;">Persistent fatigue, sleep disorders, or energy concerns may have medical causes. rightWELLNESS recommends consulting a qualified physician to rule out any underlying health conditions before pursuing wellness lifestyle changes.</p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Recovery Topics</h3>
+        <p>Evidence-informed wellness education on sleep, energy, and recovery — designed for Indian professionals and families.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:14px;color:var(--text-mid);">— Sleep quality vs sleep quantity</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Nutritional support for energy</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Managing cortisol and stress</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Post-workout recovery fundamentals</li>
+          <li style="font-size:14px;color:var(--text-mid);">— India-specific sleep challenges</li>
+        </ul>
+        <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;" onclick="showPage('contact')">Join Waitlist</a>
+        <div class="sidebar-disclaimer">Wellness education only. Not medical advice. Consult a qualified professional for personal health guidance.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BEAUTY FROM WITHIN PAGE ==================== -->
+<div id="page-beauty" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Beauty From Within</div>
+      <h1>Beauty <em>From Within</em></h1>
+      <p>Understanding skin health, collagen, antioxidants, and the nutritional factors that support radiant skin and graceful aging — from the inside out.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-two-col">
+      <div class="content-prose">
+        <h2>Skin health is an inside story</h2>
+        <p>The Indian beauty market is worth billions — yet the science of skin health points consistently inward. What you eat, how you sleep, your hydration levels, and your inflammation status all influence how your skin looks and feels more than topical products alone.</p>
+        <p>Beauty from within is not a marketing phrase — it is a well-researched area of nutritional science and dermatological research. Understanding the relationship between collagen synthesis, antioxidant protection, hydration, and hormonal health gives you a more complete picture of skin wellness.</p>
+        <h2 style="margin-top:36px;">What we explore in Beauty From Within</h2>
+        <ul>
+          <li>Collagen: what it is, how it is made, and what affects its production</li>
+          <li>Antioxidants and free radical damage explained clearly</li>
+          <li>Hydration and its role in skin elasticity and texture</li>
+          <li>Nutritional factors that support skin health</li>
+          <li>How hormonal changes in the 40s affect skin</li>
+          <li>The gut-skin axis: emerging research explained</li>
+        </ul>
+        <div style="background:var(--teal-pale);border-left:3px solid var(--teal-mid);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:24px 0;">
+          <p style="font-size:14px;color:var(--text-mid);font-style:italic;margin-bottom:0;">Skin conditions and dermatological concerns require professional medical assessment. rightWELLNESS does not offer dermatological advice, diagnosis, or treatment. Please consult a qualified dermatologist or healthcare professional.</p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Skin Wellness Education</h3>
+        <p>Clear, research-informed content on nutrition and skin health — without the marketing hype.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:14px;color:var(--text-mid);">— Collagen fundamentals</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Antioxidant nutrition for skin</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Hormones and skin aging</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Gut health and complexion</li>
+          <li style="font-size:14px;color:var(--text-mid);">— Supplements and skin: what the evidence says</li>
+        </ul>
+        <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;" onclick="showPage('contact')">Join Waitlist</a>
+        <div class="sidebar-disclaimer">Wellness education only. Not a substitute for dermatological or medical care. Always consult a qualified professional.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== EDUCATION HUB PAGE ==================== -->
+<div id="page-education" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Education Hub</div>
+      <h1>The rightWELLNESS<br><em>Education Hub</em></h1>
+      <p>India's most trusted wellness education resource — clear, evidence-informed, and designed specifically for Indian consumers, families, and health professionals.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:56px;">
+      <div class="content-card" onclick="showPage('aging')" style="cursor:pointer;">
+        <span class="content-card-icon">🌿</span>
+        <h4>Healthy Aging</h4>
+        <p>Understanding biological aging, what changes at each decade, and the lifestyle factors that make the most difference.</p>
+      </div>
+      <div class="content-card" onclick="showPage('metabolic')" style="cursor:pointer;">
+        <span class="content-card-icon">⚖️</span>
+        <h4>Metabolic Wellness</h4>
+        <p>Metabolism, blood sugar balance, weight, gut health, and the nutritional science of maintaining metabolic vitality.</p>
+      </div>
+      <div class="content-card" onclick="showPage('recovery')" style="cursor:pointer;">
+        <span class="content-card-icon">⚡</span>
+        <h4>Recovery & Energy</h4>
+        <p>Sleep science, fatigue, mitochondrial health, cortisol, and the foundations of true, sustainable daily energy.</p>
+      </div>
+      <div class="content-card" onclick="showPage('beauty')" style="cursor:pointer;">
+        <span class="content-card-icon">✨</span>
+        <h4>Beauty From Within</h4>
+        <p>Collagen, antioxidants, hydration, and the nutritional science of radiant, healthy skin as you age.</p>
+      </div>
+      <div class="content-card">
+        <span class="content-card-icon">🧘</span>
+        <h4>Sleep & Stress Support</h4>
+        <p>India's sleep crisis, cortisol science, circadian rhythms, and practical wellness approaches for a calmer life.</p>
+      </div>
+      <div class="content-card">
+        <span class="content-card-icon">🏃</span>
+        <h4>Mobility & Movement</h4>
+        <p>Joint health, flexibility, functional movement, and why staying active is the most evidence-backed longevity habit.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--teal);border-radius:var(--radius-lg);padding:48px 40px;text-align:center;margin-bottom:40px;">
+      <h2 style="font-family:var(--font-display);font-size:36px;font-weight:500;color:white;margin-bottom:16px;">Full access coming soon</h2>
+      <p style="color:rgba(255,255,255,0.75);font-size:16px;font-weight:300;max-width:540px;margin:0 auto 32px;">Join the waitlist to get early access to our complete education library, expert webinars, and India-specific wellness guidance.</p>
+      <a href="#" class="btn-gold" onclick="showPage('contact')">Join the Waitlist →</a>
+    </div>
+
+    <div style="background:var(--cream);border-radius:var(--radius);padding:24px;border:1px solid var(--border);font-size:12px;color:var(--text-muted);font-weight:300;line-height:1.7;font-style:italic;">
+      All content on the rightWELLNESS Education Hub is for wellness education purposes only. It does not constitute medical advice and should not be used to diagnose, treat, cure, or prevent any disease or health condition. rightWELLNESS strongly recommends consulting a qualified healthcare professional for all personal health decisions.
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CLINICS PAGE ==================== -->
+<div id="page-clinics" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › For Clinics & Partners</div>
+      <h1>For Clinics &<br><em>Partners</em></h1>
+      <p>Partner with rightWELLNESS India to build a more trusted, education-led wellness ecosystem for your patients, clients, and customers.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-two-col">
+      <div class="content-prose">
+        <h2>Why partner with<br><em>rightWELLNESS India?</em></h2>
+        <p>India's wellness market is growing rapidly — but trust remains a challenge. Patients are overwhelmed by information, products, and conflicting advice. Clinics and health professionals are increasingly seen as the trusted filter.</p>
+        <p>rightWELLNESS is building India's most credible wellness education platform — and we are doing it in partnership with the healthcare professionals who share our values.</p>
+        <p>By partnering with rightWELLNESS, your clinic or practice gains access to professionally curated education content that supports your patient relationships, builds trust, and helps your clients make more informed wellness choices — within the appropriate scope of your professional guidance.</p>
+        <h2 style="margin-top:36px;">Who we partner with</h2>
+        <ul>
+          <li>Wellness clinics and integrative health centres</li>
+          <li>Nutritionists, registered dietitians, and clinical nutritionists</li>
+          <li>Health coaches and lifestyle medicine practitioners</li>
+          <li>Premium pharmacies with wellness departments</li>
+          <li>Corporate wellness programmes and HR teams</li>
+          <li>Ayurvedic and naturopathic practices</li>
+        </ul>
+        <h2 style="margin-top:36px;">Partnership benefits</h2>
+        <ul>
+          <li>Co-branded wellness education materials for your clients</li>
+          <li>Listing in the rightWELLNESS partner directory (national visibility)</li>
+          <li>Early access to new research summaries and resources</li>
+          <li>Invitations to professional education events and webinars</li>
+          <li>Patient-facing educational content that aligns with your care philosophy</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>Express Interest</h3>
+        <p>We are currently accepting founding partner enquiries. Share your details and our team will contact you to explore how we can work together.</p>
+        <a href="#" class="btn-primary" style="display:inline-flex;width:100%;justify-content:center;margin-bottom:16px;" onclick="showPage('contact')">Submit Partner Enquiry →</a>
+        <p style="font-size:13px;color:var(--text-muted);font-weight:300;line-height:1.6;">We respond to all partner enquiries within 3 working days. For urgent enquiries, please mention it in your message.</p>
+        <div class="sidebar-disclaimer">rightWELLNESS partner materials are educational in nature only. All content complies with FSSAI guidelines and applicable Indian regulations. Professional consultation is always recommended.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FAQ PAGE ==================== -->
+<div id="page-faq" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › FAQs</div>
+      <h1>Frequently Asked<br><em>Questions</em></h1>
+      <p>Answers to the most common questions about rightWELLNESS India — what we do, who we serve, and how we can help you.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">What exactly is rightWELLNESS India?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">rightWELLNESS India is a premium wellness education platform focused on active aging and healthy living for Indian consumers. We provide clear, evidence-informed content on energy, recovery, metabolic wellness, skin health, mobility, and sleep — designed to help people understand their options and make more informed lifestyle choices. We are not a medical provider, pharmacy, or treatment platform.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Is this a medical platform? Does rightWELLNESS diagnose or treat conditions?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">No. rightWELLNESS is an education platform — not a medical provider. We do not diagnose, treat, cure, or prevent any disease or health condition. Our content is wellness education, provided to help you understand topics so that you can have better informed conversations with your doctor, nutritionist, or other qualified healthcare professional. Always consult a qualified healthcare provider for medical concerns.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Who is rightWELLNESS India designed for?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Our platform is designed for health-conscious Indian adults — particularly those in their 40s, 50s, and 60s who are curious about active aging, energy, metabolic balance, and long-term vitality. We also serve healthcare professionals such as nutritionists, wellness clinics, health coaches, and premium pharmacies who are looking for trusted wellness education partners.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Does rightWELLNESS sell products or supplements?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">At this stage, rightWELLNESS India is focused on education and community building. We are not a retail platform. Our goal is to provide India's health-conscious population with the knowledge and context they need to make better wellness decisions — including understanding when and how professional consultation matters before considering any wellness product or supplement.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Why is professional consultation so important in wellness?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Wellness needs are highly individual. What supports one person's health may be irrelevant or even counterproductive for another, depending on their underlying health status, medications, diet, and genetics. A qualified nutritionist, physician, or health professional can provide personalised guidance that generic education content simply cannot. rightWELLNESS always encourages professional consultation as a first step — our education content is designed to help you ask better questions, not replace expert advice.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Is the content on rightWELLNESS compliant with Indian regulations?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">rightWELLNESS India is committed to full compliance with Indian regulations governing health communications, advertising standards, and wellness content. We do not make disease-treatment claims. All content is presented as wellness education only. We follow ASCI guidelines and applicable FSSAI communication standards, and we clearly disclaim that our content is not medical advice. For any regulatory concerns, please contact us directly.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">How do I join the rightWELLNESS waitlist?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Simply click the "Join the Waitlist" button on any page, or visit our Contact page. Fill in your name, email, city, and area of interest — and we will be in touch with early access details, education content, and invitations to our community events as we build toward launch.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">Is rightWELLNESS available in Hindi or regional Indian languages?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Currently, rightWELLNESS India is available in English. We are actively planning Hindi and regional language support as part of our roadmap — we recognise how important accessibility is for India's diverse population. Waitlist members will be among the first to access language-specific content when it becomes available.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">How can a clinic or health professional partner with rightWELLNESS?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">We welcome partnerships with wellness clinics, nutritionists, health coaches, and premium pharmacies. Visit our "For Clinics & Partners" page or submit an enquiry through our Contact form, selecting "Clinic or Partner" as your role. Our team will reach out to discuss how we can collaborate to build a more trusted wellness education ecosystem in India.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">What makes rightWELLNESS different from other wellness websites?<div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A4060" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Three things set us apart: (1) We are India-specific — our content is designed for Indian dietary patterns, lifestyle context, and health landscape. (2) We are education-first — we will never sell you something before helping you understand it. (3) We are compliance-conscious — we never make disease-treatment claims, and we always recommend professional consultation. We believe India deserves a wellness platform it can genuinely trust.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Contact</div>
+      <h1>Join the Waitlist &<br><em>Get in Touch</em></h1>
+      <p>Be among the first to access rightWELLNESS India. Share your details below and we will be in touch soon.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="waitlist-grid">
+      <div class="waitlist-info">
+        <span class="section-label">Contact & Enquiries</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(26px,3vw,38px);font-weight:500;color:var(--text-dark);line-height:1.2;margin-bottom:20px;">We'd love to hear<br><em style="font-style:italic;color:var(--teal);">from you</em></h2>
+        <p style="color:var(--text-mid);font-size:15px;font-weight:300;line-height:1.7;margin-bottom:20px;">Whether you are an individual looking to learn more, a clinic exploring a partnership, or a health professional who wants to collaborate — rightWELLNESS India is here.</p>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:white;border-radius:var(--radius);border:1px solid var(--border-soft);">
+            <div style="font-size:20px;">📧</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-dark);">Email</div>
+              <div style="font-size:14px;color:var(--teal-light);">hello@rightwellness.in</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:white;border-radius:var(--radius);border:1px solid var(--border-soft);">
+            <div style="font-size:20px;">🌐</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-dark);">Website</div>
+              <div style="font-size:14px;color:var(--teal-light);">rightwellness.in</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:white;border-radius:var(--radius);border:1px solid var(--border-soft);">
+            <div style="font-size:20px;">📍</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-dark);">Serving India</div>
+              <div style="font-size:14px;color:var(--text-muted);">Mumbai · Delhi · Bangalore · Hyderabad · Chennai · Pune · and beyond</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--teal-pale);border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);">
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:0;">Information provided through this form is used only to respond to your enquiry and to send you relevant rightWELLNESS updates. We do not sell or share your data with third parties. All website content is for wellness education only and does not constitute medical advice.</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div id="contactFormWrap">
+          <h3 style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--text-dark);margin-bottom:6px;">Send us a message</h3>
+          <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-bottom:28px;">We typically respond within 2 working days.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name <span>*</span></label>
+              <input type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label>City <span>*</span></label>
+              <input type="text" placeholder="Your city">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" placeholder="+91">
+            </div>
+            <div class="form-group">
+              <label>Email <span>*</span></label>
+              <input type="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label>Age Group</label>
+              <select>
+                <option value="">Select</option>
+                <option>Under 35</option><option>35 – 44</option><option>45 – 54</option><option>55 – 64</option><option>65+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>I am a <span>*</span></label>
+              <select>
+                <option value="">Select</option>
+                <option>Individual Consumer</option>
+                <option>Family / Caregiver</option>
+                <option>Clinic or Hospital</option>
+                <option>Nutritionist / Dietitian</option>
+                <option>Health Coach</option>
+                <option>Pharmacy</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Interest Area</label>
+              <select>
+                <option value="">What are you most interested in?</option>
+                <option>Energy & Vitality</option>
+                <option>Sleep & Stress</option>
+                <option>Metabolic Wellness</option>
+                <option>Joint Health & Mobility</option>
+                <option>Skin Health & Beauty</option>
+                <option>Overall Healthy Aging</option>
+                <option>Partnership / Clinic Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Message <span>*</span></label>
+              <textarea placeholder="How can we help you? Tell us what you're looking for or ask us a question..."></textarea>
+            </div>
+          </div>
+          <div class="form-submit-row">
+            <p class="form-note">Your data is safe. We never share personal information.</p>
+            <button class="btn-primary" onclick="submitContactForm()">Send Message →</button>
+          </div>
+        </div>
+        <div class="form-success" id="contactFormSuccess">
+          <div class="success-icon">✓</div>
+          <h3>Message received!</h3>
+          <p>Thank you for reaching out to rightWELLNESS India. We will be in touch within 2 working days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER BAR -->
+<div class="disclaimer-bar">
+  <div class="disclaimer-bar-inner">
+    <strong style="font-weight:500;color:var(--text-mid);">Important Notice:</strong> Information on this website is for wellness education only. It is not medical advice and does not diagnose, treat, cure, or prevent any disease or health condition. rightWELLNESS India always recommends consulting a qualified healthcare professional before making any changes to your diet, lifestyle, or wellness regimen.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/wellnessLogo.svg" alt="Wellness Logo" width="160">
+        <p>India's premium wellness education platform for active aging, energy, recovery, metabolic balance, and long-term vitality. Education-led. Professional-recommended. India-designed.</p>
+        <span class="footer-domain">rightwellness.in</span>
+      </div>
+      <div class="footer-col">
+        <h4>Wellness Topics</h4>
+        <ul>
+          <li><a onclick="showPage('aging')">Healthy Aging</a></li>
+          <li><a onclick="showPage('metabolic')">Metabolic Wellness</a></li>
+          <li><a onclick="showPage('recovery')">Recovery & Energy</a></li>
+          <li><a onclick="showPage('beauty')">Beauty From Within</a></li>
+          <li><a onclick="showPage('education')">Education Hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('clinics')">For Clinics & Partners</a></li>
+          <li><a onclick="showPage('faq')">FAQs</a></li>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
+          <li><a onclick="showPage('contact')">Join Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Content Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 rightWELLNESS India. All rights reserved. | rightwellness.in | For wellness education only — not medical advice.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (document.getElementById('mobileMenu').classList.contains('open')) {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+    return false;
+  }
+
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function toggleFAQ(item) {
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  function submitForm() {
+    const form = document.getElementById('waitlistForm');
+    const success = document.getElementById('formSuccess');
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }
+
+  function submitContactForm() {
+    const form = document.getElementById('contactFormWrap');
+    const success = document.getElementById('contactFormSuccess');
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }
+
+  // Handle all nav link clicks to prevent default
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
